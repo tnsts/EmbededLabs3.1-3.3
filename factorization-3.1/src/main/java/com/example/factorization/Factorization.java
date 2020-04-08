@@ -43,7 +43,7 @@ public class Factorization {
         else return null;
 
         ArrayList<Long> r2 = fermaCalculate(x - y);
-        if (r1 != null)res.addAll(r1);
+        if (r2 != null)res.addAll(r2);
         else return null;
 
         //res.addAll(fermaCalculate(x + y));
