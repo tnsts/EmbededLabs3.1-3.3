@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 EditText editMutation = findViewById(R.id.editMutation);
                 EditText editGSize = findViewById(R.id.editGSize);
+                EditText editMaxTime = findViewById(R.id.editMaxTime);
 
                 if (editA.getText().toString().length() > 0 &&
                         editB.getText().toString().length() > 0 &&
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         editD.getText().toString().length() > 0 &&
                         editY.getText().toString().length() > 0 &&
                         editMutation.getText().toString().length() > 0 &&
+                        editMaxTime.getText().toString().length() > 0 &&
                         editGSize.getText().toString().length() > 0) {
 
                     int A = Integer.parseInt(editA.getText().toString());
@@ -51,12 +53,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     int gsize = Integer.parseInt(editGSize.getText().toString());
                     double mutation = Double.parseDouble(editMutation.getText().toString());
+                    long maxTime = Long.parseLong(editMaxTime.getText().toString());
 
                     Genetic ga = new Genetic();
                     ga.setData(A, B, C, D, Y);
-                    Population statementRes = ga.calculate(gsize, mutation);
+                    String statementRes = ga.calculate(gsize, mutation, maxTime*1000);
 
-                    res.setText(statementRes.toString());
+                    res.setText(statementRes);
                 }
                 break;
             default:

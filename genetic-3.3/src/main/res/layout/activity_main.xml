@@ -19,18 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="generation size = "
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editGSize"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMutation" />
-
     <EditText
         android:id="@+id/edit_D"
         android:layout_width="97dp"
@@ -43,55 +31,6 @@
         android:text="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_C" />
-
-    <EditText
-        android:id="@+id/edit_Y"
-        android:layout_width="99dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="40"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_B" />
-
-    <EditText
-        android:id="@+id/editGSize"
-        android:layout_width="113dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMutation" />
-
-    <TextView
-        android:id="@+id/textMutation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="mutation probability = "
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editMutation"
-        app:layout_constraintHorizontal_bias="0.86"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewY" />
-
-    <Button
-        android:id="@+id/btnRes"
-        android:layout_width="188dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="12dp"
-        android:text="Get Res"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editGSize" />
 
     <EditText
         android:id="@+id/edit_C"
@@ -110,7 +49,6 @@
         android:id="@+id/editMutation"
         android:layout_width="113dp"
         android:layout_height="44dp"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="0.5"
@@ -118,6 +56,92 @@
         app:layout_constraintHorizontal_bias="0.778"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_Y" />
+
+    <Button
+        android:id="@+id/btnRes"
+        android:layout_width="188dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:text="Get Res"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMaxTime" />
+
+    <TextView
+        android:id="@+id/textMutation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="mutation probability = "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/editMutation"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewY" />
+
+    <EditText
+        android:id="@+id/editMaxTime"
+        android:layout_width="114dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editGSize" />
+
+    <EditText
+        android:id="@+id/editGSize"
+        android:layout_width="113dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMutation" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="max time (s) = "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/editMaxTime"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSize" />
+
+    <EditText
+        android:id="@+id/edit_Y"
+        android:layout_width="99dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_B" />
+
+    <TextView
+        android:id="@+id/textSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="generation size = "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/editGSize"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMutation" />
 
     <TextView
         android:id="@+id/textViewA"

@@ -15,11 +15,12 @@ public class Genetic {
 		this.y = y;
 	}
 
-	public Population calculate(int sizeOfGenaration, double mutaionProbability) {
-		Random rand = new Random();
+	public String calculate(int sizeOfGeneration, double mutationProbability, long maxTime) {
+        long startTime =  System.currentTimeMillis();
+	    Random rand = new Random();
 		ArrayList<Population> generation = new ArrayList<>();
 		
-		for (int i = 0; i < sizeOfGenaration; i++) {
+		for (int i = 0; i < sizeOfGeneration; i++) {
 			int cell = y/2;
 			generation.add(new Population(rand.nextInt(cell),
 										  rand.nextInt(cell),
@@ -28,6 +29,9 @@ public class Genetic {
 		}
 		
 		while(true) {
+            if (System.currentTimeMillis() - startTime > maxTime){
+                return "Counting time exceeded!";
+            }
 			
 			// ---- conformity assessment section ----		
 			int[] deltas = new int[generation.size()];
@@ -35,7 +39,7 @@ public class Genetic {
 			for(Population p : generation) {
 				deltas[k] = calculateFitnessFunction(p);
 				if (deltas[k] == 0) {
-					return p;
+					return p.toString();
 				}
 				k++;
 			}
@@ -82,7 +86,7 @@ public class Genetic {
             }
             
             // ---- mutation section ----
-            if (Math.random() < mutaionProbability) {
+            if (Math.random() < mutationProbability) {
             	Population victim = generation.get(rand.nextInt(generation.size()));
             	generation.remove(victim);
             	int gen = rand.nextInt(4);
